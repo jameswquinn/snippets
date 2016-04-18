@@ -1,0 +1,401 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>menu top</title>
+
+<style>
+    
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+
+article,
+aside,
+details, /* 1 */
+figcaption,
+figure,
+footer,
+header,
+main, /* 2 */
+menu,
+nav,
+section,
+summary { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+
+template, /* 1 */
+[hidden] {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+html,
+body {
+    background-color: black
+}
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow: hidden
+}
+    
+/* Desktop menu is tightly coupled to the <nav> tag html.
+    
+    <nav>
+        <div class="subnav">
+            <ul>
+                <li><a tabindex="0"  href="#">about us</a></li> <span></span>
+                <li><a tabindex="1"  href="#">projects</a></li>
+                <li><a tabindex="2"  href="#">work</a></li>
+                <li><a tabindex="3"  href="#">experimental</a></li>
+                <li><a tabindex="4"  href="#">blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+Please note, tabindex is used for possible bug issue with apple safari to show ":focus" correctly */
+@media screen and (max-width: 46.1875em) {
+    .subnav ul {
+        text-transform: capitalize
+    }
+    .subnav ul li {
+        list-style: none
+    }
+}
+@media screen and (min-width: 46.25em) {
+    .subnav {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 2.75rem;
+        background-color: black;
+        opacity: .7
+    }
+    .subnav ul {
+        transform: rotate(270deg) translate(-100%);
+        transform-origin: left;
+        position: fixed;
+        text-transform: none;
+        white-space: nowrap;
+        text-transform: capitalize
+    }
+    .subnav ul li {
+        margin-left: 2rem;
+        margin-top: 2rem;
+        position: relative;
+        display: inline-block;
+        text-decoration: none
+    }
+    .subnav ul span {
+        width: 35px;
+        height: 1px;
+        display: inline-block;
+        background-color: lightgray;
+        margin-left: 2rem;
+        margin-bottom: 4px
+    }
+    .subnav ul li:first-child {
+        margin-left: 0
+    }
+    .subnav ul li a {
+        color: lightgray;
+        font-size: .9rem;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        transition: all 350ms
+    }
+    .subnav ul li a:hover {
+        color: grey
+    }
+    .subnav ul li a:active {
+        color: black
+    }
+    .subnav ul li a:focus {
+        color: red;
+        outline: 0 /* apple safari show border without outline set to zero */
+    }
+    /* fade in and cascade effect */
+    .subnav ul li {
+        animation: fade_in 400ms
+    }
+    .subnav ul li:first-child {
+        animation-delay: .25s
+    }
+    .subnav ul li:nth-child(2) {
+        animation-delay: .20s
+    }
+    .subnav ul li:nth-child(3) {
+        animation-delay: .15s
+    }
+    .subnav ul li:nth-child(4) {
+        animation-delay: .10s
+    }
+    .subnav ul li:nth-child(5) {
+        animation-delay: .05s
+    }
+    @-webkit-keyframes "fade_in" {
+        0% {
+            opacity: 0
+        }
+        100% {
+            opacity: 1
+        }
+    }
+    @keyframes "fade_in" {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+</head>
+
+<body>
+    
+<nav>
+        <div class="subnav">
+            <ul>
+                <li><a tabindex="0"  href="#">about us</a></li> <span></span>
+                <li><a tabindex="1"  href="#">projects</a></li>
+                <li><a tabindex="2"  href="#">work</a></li>
+                <li><a tabindex="3"  href="#">experimental</a></li>
+                <li><a tabindex="4"  href="#">blog</a></li>
+            </ul>
+        </div>
+</nav>
+    
+   
+
+</body>
+</html>
