@@ -1,0 +1,186 @@
+<!doctype html>
+<meta charset=utf-8>
+<meta name=viewport content="initial-scale=1">
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var e = function() {
+        if ("scrollingElement"in document)
+            return document.scrollingElement;
+        var a = document.documentElement, b = a.scrollTop;
+        a.scrollTop = b + 1;
+        var c = a.scrollTop;
+        a.scrollTop = b;
+        return c > b ? a : document.body
+    }(), g = function(a) {
+        var b = e.scrollTop;
+        if (2 > a.length)
+            a =- b;
+        else if (a = document.querySelector(a)) {
+            a = a.getBoundingClientRect().top;
+            var c = e.scrollHeight - window.innerHeight;
+            a = b + a < c ? a : c - b
+        } else 
+            a = void 0;
+        if (a)
+            return new Map([["start", b], ["delta", a]])
+    }, h = function(a) {
+        var b =
+        a.getAttribute("href"), c = g(b);
+        if (c) {
+            var d = new Map([["duration", 800]]), k = performance.now();
+            requestAnimationFrame(function l(a) {
+                d.set("elapsed", a - k);
+                a = d.get("duration");
+                var f = d.get("elapsed"), g = c.get("start"), h = c.get("delta");
+                e.scrollTop = Math.round(h * ( - Math.pow(2, - 10 * f / a) + 1) + g);
+                d.get("elapsed") < d.get("duration") ? requestAnimationFrame(l) : (history.pushState(null, null, b), e.scrollTop = c.get("start") + c.get("delta"))
+            })
+        }
+    }, f = document.querySelectorAll("a.scroll");
+    (function b(c, d) {
+        var e = c.item(d);
+        e.addEventListener("click",
+        function(b) {
+            b.preventDefault();
+            h(e)
+        });
+        if (d)
+            return b(c, d - 1)
+    })(f, f.length - 1)
+});
+
+
+</script>
+
+<style>
+:root {
+  padding: 3.5em;
+  font: 1em/1.8 "helvetica neue", helvetica, arial, sans-serif;
+  background: #fafafa;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+a {
+  display: inline-block;
+  padding: 1.2em 1em;
+  color: blue;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+section {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 3em 0;
+}
+
+p {
+  margin-bottom: 1.6em;
+}
+
+section + section {
+  border-top: 1px solid #ddd;
+}
+
+
+</style>
+<title>Anchor scrolling library</title>
+
+
+<nav>
+  <a class=scroll href=#intro>Intro</a>
+  <a class=scroll href=#about >About</a>
+  <a class=scroll href=#contact>Contact</a>
+</nav>
+
+<section id=intro>
+  <h1>Intro</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium neque quis ligula
+  sodales porta. In tempus blandit neque, sit amet dignissim tellus vehicula vitae. Etiam placerat
+  scelerisque neque sed dapibus. Nulla facilisi. In et ultricies tortor. Curabitur eu semper tellus.
+  Fusce at eleifend nunc. Ut eget risus sit amet nisl dictum tristique. Etiam aliquet mollis sapien
+  vitae hendrerit. Sed vulputate leo ut neque malesuada scelerisque. Praesent diam massa, maximus eu
+  ex vel, pulvinar tincidunt est. Nulla sed odio non mauris tincidunt rhoncus. Etiam bibendum ornare
+  nisl a fringilla. Nulla neque sapien, commodo vel nibh ut, interdum laoreet nulla. Maecenas
+  rhoncus justo nec enim rutrum, quis laoreet tellus laoreet.
+  <p>Nam nec erat mi. Morbi ornare et urna quis scelerisque. Morbi id accumsan nisl, a bibendum
+  felis. Duis tempus purus in massa mattis tempus. Fusce eleifend consequat massa sollicitudin
+  vehicula. In eu rhoncus ex. Quisque gravida feugiat egestas. Class aptent taciti sociosqu ad
+  litora torquent per conubia nostra, per inceptos himenaeos.
+      
+      <h1>Intro</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium neque quis ligula
+  sodales porta. In tempus blandit neque, sit amet dignissim tellus vehicula vitae. Etiam placerat
+  scelerisque neque sed dapibus. Nulla facilisi. In et ultricies tortor. Curabitur eu semper tellus.
+  Fusce at eleifend nunc. Ut eget risus sit amet nisl dictum tristique. Etiam aliquet mollis sapien
+  vitae hendrerit. Sed vulputate leo ut neque malesuada scelerisque. Praesent diam massa, maximus eu
+  ex vel, pulvinar tincidunt est. Nulla sed odio non mauris tincidunt rhoncus. Etiam bibendum ornare
+  nisl a fringilla. Nulla neque sapien, commodo vel nibh ut, interdum laoreet nulla. Maecenas
+  rhoncus justo nec enim rutrum, quis laoreet tellus laoreet.
+  <p>Nam nec erat mi. Morbi ornare et urna quis scelerisque. Morbi id accumsan nisl, a bibendum
+  felis. Duis tempus purus in massa mattis tempus. Fusce eleifend consequat massa sollicitudin
+  vehicula. In eu rhoncus ex. Quisque gravida feugiat egestas. Class aptent taciti sociosqu ad
+  litora torquent per conubia nostra, per inceptos himenaeos.
+      
+      <h1>Intro</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium neque quis ligula
+  sodales porta. In tempus blandit neque, sit amet dignissim tellus vehicula vitae. Etiam placerat
+  scelerisque neque sed dapibus. Nulla facilisi. In et ultricies tortor. Curabitur eu semper tellus.
+  Fusce at eleifend nunc. Ut eget risus sit amet nisl dictum tristique. Etiam aliquet mollis sapien
+  vitae hendrerit. Sed vulputate leo ut neque malesuada scelerisque. Praesent diam massa, maximus eu
+  ex vel, pulvinar tincidunt est. Nulla sed odio non mauris tincidunt rhoncus. Etiam bibendum ornare
+  nisl a fringilla. Nulla neque sapien, commodo vel nibh ut, interdum laoreet nulla. Maecenas
+  rhoncus justo nec enim rutrum, quis laoreet tellus laoreet.
+  <p>Nam nec erat mi. Morbi ornare et urna quis scelerisque. Morbi id accumsan nisl, a bibendum
+  felis. Duis tempus purus in massa mattis tempus. Fusce eleifend consequat massa sollicitudin
+  vehicula. In eu rhoncus ex. Quisque gravida feugiat egestas. Class aptent taciti sociosqu ad
+  litora torquent per conubia nostra, per inceptos himenaeos.
+</section>
+
+<section id=about>
+  <h1>About</h1>
+  <p>Vestibulum ac orci mauris. Duis iaculis lobortis purus, et ullamcorper dolor accumsan a.
+  Vestibulum velit felis, tristique eu fringilla et, tempus ut quam. Donec in enim quis elit dapibus
+  interdum eget id felis. Nulla ac faucibus est. Curabitur interdum, massa vel convallis
+  scelerisque, ex quam bibendum lectus, et posuere purus quam eu ex. In vulputate dapibus aliquet.
+  Morbi pretium lectus vel tortor congue, non pretium arcu dignissim. Mauris in purus mollis, varius
+  dui eu, viverra felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+  inceptos himenaeos. In cursus nulla leo, vel scelerisque lacus tempus blandit. Morbi vitae gravida
+  orci.
+  <p>Praesent pulvinar fermentum eros, nec molestie diam ullamcorper vel. Maecenas id arcu tortor.
+  Nam vitae diam diam. Fusce tempor, enim vulputate mattis semper, lectus augue aliquet orci, vel
+  sollicitudin massa enim at ante. Donec iaculis elementum ligula ut elementum. Duis commodo ante
+  eget mauris pretium aliquam. Donec nec rhoncus ligula. Nunc id bibendum odio.
+</section>
+
+<section id=contact>
+  <h1>Contact</h1>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+  Cras et auctor felis. Aliquam erat volutpat. Donec eu justo sit amet libero hendrerit faucibus.
+  Nulla facilisi. Sed mauris tellus, venenatis ac metus pretium, vulputate fermentum sem. Vivamus
+  purus tellus, dignissim in nibh at, semper imperdiet dui. Nunc iaculis nunc enim, sit amet feugiat
+  sapien fringilla a. Sed non eleifend diam, nec rhoncus sem. Nunc molestie tellus magna, ac
+  facilisis sapien feugiat vitae. Aliquam auctor augue eget vehicula sagittis. Aliquam id venenatis
+  turpis, elementum tincidunt enim. Duis justo ipsum, vehicula vitae cursus eget, vulputate varius
+  ligula. Proin a ligula id velit ullamcorper ullamcorper. Cum sociis natoque penatibus et magnis
+  dis parturient montes, nascetur ridiculus mus. Maecenas ac lorem quis purus malesuada blandit.
+  <p>Cras nibh odio, tempus in magna non, mollis semper sapien. In vulputate aliquet nisl in semper.
+  Etiam in eros nibh. Sed id sollicitudin nisi. Donec velit lacus, dignissim a viverra vel, tempus
+  eget sapien. Vestibulum a dapibus odio. Nulla mattis, purus in egestas finibus, lacus purus
+  fermentum est, porttitor pretium elit libero nec metus. Ut eu ultricies mi.
+</section
+    
+
+
+
+
